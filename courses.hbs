@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Courses</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, #000000, #0b0f2d, #1a1f4b, #1d11fe);
+      background-attachment: fixed;
+      color: white;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1d11fe, #000000);
+      color: white;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    header .logo {
+      font-size: 28px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #4fa3ff;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 15px;
+      font-size: 2.8rem;
+      color: #4fa3ff;
+      text-shadow: 0 0 15px rgba(79, 163, 255, 0.7);
+    }
+
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+
+    .course-category {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 25px;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .category-box {
+      background: #0f1228;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      flex: 0 1 calc(50% - 20px);
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 25px rgba(29, 17, 254, 0.6), 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .category-box img {
+      width: 100%;
+      height: 40vh;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Overlay */
+    .hover-overlay {
+     position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 17, 254, 0.85);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;  /* 🔑 Prevents blocking clicks */
+  transition: opacity 0.4s ease;
+  z-index: 1; /* Behind info */
+}
+
+    .category-box:hover .hover-overlay {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .category-info h3 {
+      margin: 15px 0;
+      font-size: 1.6rem;
+      color: #4fa3ff;
+    }
+
+    .category-info button {
+      background: linear-gradient(90deg, #1d11fe, #000000);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, background 0.3s ease;
+        position: relative;
+  z-index: 2;
+    }
+
+    .category-info button:hover {
+      background: linear-gradient(90deg, #000000, #1d11fe);
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: #000;
+      color: #888;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+
+    footer:hover {
+      color: #4fa3ff;
+      transition: color 0.3s ease;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">ByteLogix Hub</div>
+    <nav>
+      <ul>
+        <li><a href="/home">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Explore Our Coding Courses</h1>
+  <p>Browse through various categories based on your interest and skill level.</p>
+
+  <div class="course-category">
+    <!-- Your same category-boxes go here -->
+    <!-- Example one -->
+    <div class="category-box">
+      <img src="/images/base.jpg" alt="Languages">
+      <div class="hover-overlay">
+        <p>Explore essential coding languages like Python, JavaScript, C++, Java, and more with hands-on projects across web, software, and data domains.</p>
+      </div>
+      <div class="category-info">
+        <h3>Languages Mastery</h3>
+        <button onclick="location.href='/instrument'">Explore Courses</button>
+      </div>
+    </div>
+      <div class="category-box">
+                <img src="/images/web3.jpeg" alt="Music Theory Basics">
+                <div class="hover-overlay">
+        <p>Explore the decentralized world of Web3 with a focus on blockchain technology, smart contracts, and crypto-based applications. Learn about Ethereum, NFTs, and decentralized finance (DeFi) while gaining hands-on experience in building secure and transparent digital systems. This course is ideal for aspiring blockchain developers and innovators ready to shape the future of the internet.</p>
+    </div>
+                <div class="category-info">
+                    <h3>Web3 Pro</h3>
+                    
+                    <button onclick="location.href='/web3'"> Explore Courses </button>
+                </div>
+            </div>
+            <div class="category-box">
+                <img src="/images/fulls.png" alt="Western Classical">
+                <div class="hover-overlay">
+        <p>Explore the complete landscape of Full-Stack Development with a focus on front-end design, back-end logic, and seamless integration. Learn about HTML, CSS, JavaScript, React, Node.js, and databases while building dynamic, responsive web applications from scratch. This course is ideal for aspiring developers and creators ready to craft full-scale digital experiences.</p>
+    </div>
+                <div class="category-info">
+                    <h3>Full-Stack Fusion</h3>
+                    
+       <button onclick="location.href='/fusion'"> Explore Courses </button>
+                </div>
+            </div>
+
+<div class="category-box">
+                <img src="/images/wizard.jpg" alt="Indian Classical">
+                <div class="hover-overlay">
+        <p>Explore the emerging field of Prompt Engineering with a focus on crafting effective inputs for AI models like ChatGPT, DALL·E, and more. Learn about language patterns, prompt optimization, and real-world AI integration while mastering the art of communicating with intelligent systems. This course is ideal for creators, strategists, and tech enthusiasts ready to harness the full potential of generative AI.</p>
+    </div>
+                <div class="category-info">
+                    <h3>Prompt Wizard</h3>
+                    
+                   <button onclick="location.href='/wiz'"> Explore Courses </button>
+                </div>
+            </div>
+            <div class="category-box">
+                <img src="/images/cyber.jpeg" alt="Jazz">
+                <div class="hover-overlay">
+        <p>Explore the critical field of Cybersecurity with a focus on ethical hacking, digital forensics, and network protection. Learn about threat detection, vulnerability analysis, and secure system design while mastering the tools to defend against real-world cyber threats. This course is ideal for future cybersecurity experts and tech enthusiasts ready to safeguard the digital world.</p>
+    </div>
+                <div class="category-info">
+                    <h3>Cyber Sentinel</h3>
+                    
+                          
+                   <button onclick="location.href='/cyber'"> Explore Courses </button>
+                </div>
+            </div>
+            <div class="category-box">
+                <img src="/images/craft.png" alt="Pop">
+                <div class="hover-overlay">
+        <p>Explore the exciting world of Mobile App Development with a focus on Flutter and cross-platform design. Learn about UI/UX principles, responsive layouts, and backend integration while building sleek, high-performance apps for both Android and iOS. This course is ideal for aspiring app developers and tech creatives ready to craft powerful mobile experiences.</p>
+    </div>
+                <div class="category-info">
+                    <h3>AppCraft-Flutter</h3>
+          <button onclick="location.href='/flut'"> Explore Courses </button>
+                </div>
+            </div>
+             <div class="category-box">
+                <img src="/images/dash.webp" alt="Folk">
+                <div class="hover-overlay">
+        <p>Explore the dynamic field of Data Analytics with a focus on tools like Python, SQL, Power BI, and Tableau. Learn about data cleaning, visualization, and insight generation while working with real-world datasets to drive smart business decisions. This course is ideal for aspiring data analysts and professionals ready to turn raw data into impactful stories.
+</p>
+    </div>
+                <div class="category-info">
+                    <h3>Datadash Pro</h3>
+                    
+                <button onclick="location.href='/pro'"> Explore Courses </button>
+                </div>
+            </div>
+            <div class="category-box">
+                <img src="/images/green.jpg" alt="Electronic Music">
+                <div class="hover-overlay">
+        <p>Explore the growing field of Green Technology with a focus on sustainable innovation, environmental data, and clean energy solutions. Learn about carbon tracking, eco-friendly design, and climate tech tools while developing projects that promote a greener future. This course is ideal for aspiring innovators and change-makers ready to build technology that supports a sustainable world.
+</p>
+    </div>
+                <div class="category-info">
+                    <h3>GreenTech Innovator</h3>
+                
+                <button onclick="location.href='/green'"> Explore Courses </button>
+                </div>
+            </div>
+
+    <!-- Keep rest of your boxes unchanged, they will inherit new styling -->
+  </div>
+
+  <footer>
+    &copy; 2025 ByteLogix Hub. All Rights Reserved.
+  </footer>
+</body>
+</html>

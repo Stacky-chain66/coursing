@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Register — ByteLogix Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center; background: linear-gradient(-45deg,#0d47a1 0%, #000 25%, #1976d2 50%, #111 75%); background-size:400% 400%; animation: gradientBG 10s linear infinite; color:#fff; padding:16px;}
+@keyframes gradientBG{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.container{width:100%;max-width:540px;background:rgba(255,255,255,0.06);border-radius:14px;padding:26px;box-shadow:0 12px 40px rgba(0,0,0,.6);backdrop-filter:blur(8px)}
+h2{text-align:center;margin-bottom:12px;color:#eaf4ff}
+label{display:block;font-size:13px;color:#cfe8ff;margin:10px 0 6px;font-weight:600}
+input,select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.08);background:rgba(0,0,0,0.25);color:#fff;font-size:15px}
+.row{display:flex;gap:12px}
+.half{flex:1}
+.btn{width:100%;padding:12px;border-radius:10px;border:none;margin-top:14px;cursor:pointer;font-weight:700;background:linear-gradient(180deg,#2196f3,#0d47a1);color:#fff}
+#status{margin-top:12px;text-align:center;font-weight:700;color:#a6f4c5;display:none}
+.note{margin-top:10px;font-size:13px;color:#bcd9ff;text-align:center}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>Course Registration</h2>
+<form id="registrationForm" autocomplete="off">
+  <div class="row">
+    <div class="half">
+      <label for="firstName">First Name</label>
+      <input id="firstName" name="firstName" type="text" required />
+    </div>
+    <div class="half">
+      <label for="lastName">Last Name</label>
+      <input id="lastName" name="lastName" type="text" required />
+    </div>
+  </div>
+
+  <label for="email">Email</label>
+  <input id="email" name="email" type="email" required />
+
+  <div class="row">
+    <div class="half">
+      <label for="courseName">Course</label>
+      <select id="courseName" name="courseName" required>
+        <option value="">Select Course</option>
+        <option>Languages Mastery</option>
+        <option>Web3 Pro</option>
+        <option>Full-stack Fusion</option>
+        <option>Prompt Wizard</option>
+        <option>Cyber Sentinel</option>
+        <option>AppCraft-Flutter</option>
+        <option>Datadash Pro</option>
+        <option>GreenTech Innovator</option>
+      </select>
+    </div>
+    <div class="half">
+      <label for="className">Class</label>
+      <select id="className" name="className" required>
+        <option value="">Select Class</option>
+      </select>
+    </div>
+  </div>
+
+  <label for="mobile">Mobile</label>
+  <input id="mobile" name="mobile" type="tel" placeholder="+91XXXXXXXXXX" required />
+
+  <label for="descriptionInput">Description / Notes</label>
+  <input id="descriptionInput" name="description" type="text" placeholder="Add your description here" />
+
+  <button type="submit" id="submitBtn" class="btn">Submit Registration</button>
+  <p id="status">✅ Registration successful!</p>
+  <p class="note">All fields are required before submission.</p>
+</form>
+</div>
+
+<script>
+// Course -> Classes mapping
+const map = {
+  "Languages Mastery": ["Python","Java","C++","C","HTML & CSS","JavaScript","Julia"],
+  "Web3 Pro": ["Blockchain Basics","Smart Contracts","dApps","NFTs","DeFi & NFTs","Web3 Tools"],
+  "Full-stack Fusion": ["MERN","Next.js","Django","Node.js","React","TailwindCSS"],
+  "Prompt Wizard": ["AI Basics","Prompting","Chatbots","LLMOps","NLP","MAgents","RAG"],
+  "Cyber Sentinel": ["Cybersecurity","Ethical Hacking","PenTesting","Malware Analysis"],
+  "AppCraft-Flutter": ["Flutter","Dart","UI/UX"],
+  "Datadash Pro": ["SQL","Python","Statistics","Data Visualization"],
+  "GreenTech Innovator": ["Sustainability","BatteryTech","WaterTech"]
+};
+
+const courseEl = document.getElementById('courseName');
+const classEl = document.getElementById('className');
+
+// Populate classes when course changes
+courseEl.addEventListener('change', () => {
+  classEl.innerHTML = '<option value="">Select Class</option>';
+  (map[courseEl.value] || []).forEach(v => {
+    const opt = document.createElement('option');
+    opt.value = v;
+    opt.textContent = v;
+    classEl.appendChild(opt);
+  });
+});
+
+// Form submit
+document.getElementById('registrationForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Here you can add Firebase or backend saving if needed
+
+  // Show success message and redirect
+  const statusEl = document.getElementById('status');
+  statusEl.style.display = 'block';
+  statusEl.textContent = '✅ Registration successful!';
+  
+  setTimeout(() => {
+    window.location.href = '/thankyou'; // Redirect after 2 seconds
+  }, 2000);
+});
+</script>
+</body>
+</html>

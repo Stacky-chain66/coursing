@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You!</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+    /* Animated gradient background */
+    body {
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(270deg, #0b0b0b, #1d11fe, #000000, #1d11fe);
+        background-size: 800% 800%;
+        animation: gradientBG 12s ease infinite;
+        color: #e6f0ff;
+    }
+
+    @keyframes gradientBG {
+        0% {background-position:0% 50%;}
+        50% {background-position:100% 50%;}
+        100% {background-position:0% 50%;}
+    }
+
+    .container {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 0 40px rgba(29,17,254,0.7);
+        max-width: 600px;
+        animation: popIn 0.8s ease forwards;
+    }
+
+    @keyframes popIn {
+        0% { transform: scale(0.8); opacity: 0;}
+        100% { transform: scale(1); opacity: 1;}
+    }
+
+    h1 {
+        font-size: 45px;
+        margin-bottom: 30px;
+        color: #1d11fe;
+        text-shadow: 0 0 10px #1d11fe, 0 0 20px #ffffff, 0 0 30px #48a0ff;
+        animation: glowText 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowText {
+        0% { text-shadow: 0 0 5px #1d11fe, 0 0 10px #48a0ff;}
+        100% { text-shadow: 0 0 15px #1d11fe, 0 0 30px #48a0ff;}
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #cfe6ff;
+    }
+
+    .loader {
+        margin: 20px auto;
+        width: 80px;
+        height: 80px;
+        border: 8px solid #1d11fe;
+        border-top: 8px solid #48a0ff;
+        border-radius: 50%;
+        animation: spin 1s linear infinite, loaderGlow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes spin {
+        100% { transform: rotate(360deg); }
+    }
+
+    @keyframes loaderGlow {
+        0% { box-shadow: 0 0 5px #1d11fe;}
+        50% { box-shadow: 0 0 20px #48a0ff;}
+        100% { box-shadow: 0 0 5px #1d11fe;}
+    }
+
+    .home-btn {
+        background: linear-gradient(90deg, #1d11fe, #000000);
+        color: white;
+        font-size: 20px;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-top: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 0 15px #1d11fe;
+    }
+
+    .home-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px #48a0ff, 0 0 50px #1d11fe;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Thank You for Enrolling in the Course!</h1>
+        <p>Our Team will soon contact you for the further process.</p>
+        <p>Redirecting you to the homepage...</p>
+        <div class="loader"></div>
+        <!-- Optional button if user wants to click immediately -->
+        <button class="home-btn" onclick="window.location.href='/home'">Go to Homepage</button>
+    </div>
+
+<script>
+    setTimeout(() => {
+        window.location.href = "/home"; // Redirect to homepage after 5 seconds
+    }, 5000);
+</script>
+</body>
+</html>

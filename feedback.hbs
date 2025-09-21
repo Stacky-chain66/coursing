@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Royal Blue & Black Gradient Background */
+    body {
+      background: linear-gradient(135deg, #000000 0%, #091a3d 35%, #1d11fe 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #e6f0ff;
+    }
+
+    .feedback {
+      padding: 30px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      width: 400px;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(120,150,255,0.15);
+      backdrop-filter: blur(6px);
+    }
+
+    .feedback h2 {
+      font-size: 2rem;
+      color: #8fb9ff;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      color: #cfe6ff;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(120,150,255,0.15);
+      background: rgba(255,255,255,0.05);
+      color: #eaf4ff;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(220,235,255,0.55);
+    }
+
+    input:focus, textarea:focus {
+      border-color: #4fa3ff;
+      box-shadow: 0 0 12px rgba(29,17,254,0.35);
+      background: rgba(255,255,255,0.08);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #1d11fe, #000000);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 8px 20px rgba(29,17,254,0.2);
+    }
+
+    button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 14px 32px rgba(29,17,254,0.35);
+      background: linear-gradient(90deg, #0b65ff, #000000);
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 28px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid rgba(120,150,255,0.2);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal h3 {
+      font-size: 1.8rem;
+      color: #9ed0ff;
+      margin-bottom: 10px;
+    }
+
+    .modal p {
+      color: #e6f0ff;
+      margin-bottom: 15px;
+    }
+
+    .modal button {
+      margin-top: 12px;
+      padding: 10px 20px;
+      width: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Feedback Section -->
+  <section class="feedback" id="feedbackSection">
+    <h2>Leave Your Feedback</h2>
+    <form id="feedbackForm">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" placeholder="Write your feedback..." required></textarea>
+      </div>
+      <button type="submit">Submit Feedback</button>
+    </form>
+  </section>
+
+  <!-- Feedback Modal -->
+  <div class="modal-overlay" id="feedbackModalOverlay">
+    <div class="modal">
+      <h3>Thank You!</h3>
+      <p>Your feedback has been submitted successfully.</p>
+      <button onclick="closeFeedbackModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('feedbackForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('name');
+      const messageInput = document.getElementById('message');
+
+      const name = nameInput.value;
+      const message = messageInput.value;
+
+      const response = await fetch('/submit-feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, message }),
+      });
+
+      if (response.ok) {
+        document.getElementById('feedbackSection').style.display = "none";
+        document.getElementById('feedbackModalOverlay').style.display = "flex";
+
+        // Clear input fields
+        nameInput.value = "";
+        messageInput.value = "";
+      } else {
+        alert('Error submitting feedback');
+      }
+    });
+
+    function closeFeedbackModal() {
+      document.getElementById('feedbackModalOverlay').style.display = "none";
+      document.getElementById('feedbackSection').style.display = "block";
+    }
+  </script>
+</body>
+</html>

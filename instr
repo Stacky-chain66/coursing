@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrument Learning Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        header {
+            background: linear-gradient(90deg, #6A5ACD, #48C9B0);
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Container for courses */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        /* Course Cards */
+        .course {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            align-items: start;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            margin-left: 20px; /* Shift course box to left */
+        }
+
+        .course:hover {
+            transform: scale(1.02);
+        }
+
+        .course img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .course-details {
+            padding: 20px;
+        }
+
+        .course-details h3 {
+            font-size: 1.8rem;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+        }
+
+        .course-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .course-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #48C9B0;
+            margin-top: 10px;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #6A5ACD;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .enroll-btn:hover {
+            background-color: #5A4ABC; /* Hover effect */
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">Melody Academy</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Container for Courses -->
+    <div class="container">
+        <h1 style="text-align: center; color: #6A5ACD;">Our Instrument Learning Courses</h1>
+
+        <!-- Guitar Beginner Course -->
+        <div class="course">
+            <img src="/images/imag3.jpg" alt="Guitar Beginner Course">
+            <div class="course-details">
+                <h3>Guitar Beginner Course</h3>
+                <p><strong>Instructor:</strong> John Doe</p>
+                <p><strong>Duration:</strong> 3 Months</p>
+                <p><strong>Description:</strong> Start your guitar journey with basic chords and strumming techniques.</p>
+                <p class="price">$200</p>
+                <a href="#" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+
+        <!-- Guitar Advanced Course -->
+        <div class="course">
+            <img src="/images/imag3.jpg" alt="Guitar Advanced Course">
+            <div class="course-details">
+                <h3>Guitar Advanced Course</h3>
+                <p><strong>Instructor:</strong> John Doe</p>
+                <p><strong>Duration:</strong> 3 Months</p>
+                <p><strong>Description:</strong> Master advanced guitar techniques and intricate strumming patterns.</p>
+                <p class="price">$300</p>
+                <a href="#" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+
+        <!-- Piano Beginner Course -->
+        <div class="course">
+            <img src="https://example.com/piano.jpg" alt="Piano Beginner Course">
+            <div class="course-details">
+                <h3>Piano Beginner Course</h3>
+                <p><strong>Instructor:</strong> Jane Smith</p>
+                <p><strong>Duration:</strong> 4 Months</p>
+                <p><strong>Description:</strong> Learn basic piano skills, scales, and simple melodies.</p>
+                <p class="price">$250</p>
+                <a href="#" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+
+        <!-- Piano Advanced Course -->
+        <div class="course">
+            <img src="https://example.com/piano.jpg" alt="Piano Advanced Course">
+            <div class="course-details">
+                <h3>Piano Advanced Course</h3>
+                <p><strong>Instructor:</strong> Jane Smith</p>
+                <p><strong>Duration:</strong> 4 Months</p>
+                <p><strong>Description:</strong> Master complex piano techniques and performance skills.</p>
+                <p class="price">$350</p>
+                <a href="#" class="enroll-btn">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+    <div class="course">
+        <img src="https://example.com/tabla.jpg" alt="Tabla Course">
+        <div class="course-details">
+            <h3>Tabla Rhythms</h3>
+            <p><strong>Instructor:</strong> Arjun Singh</p>
+            <p><strong>Duration:</strong> 3 Months</p>
+            <p><strong>Description:</strong> Learn traditional tabla techniques, taals, and compositions.</p>
+            <p class="price">$300</p>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+    </div>
+
+    <!-- Violin Beginner Course -->
+    <div class="course">
+        <img src="https://example.com/violin.jpg" alt="Violin Beginner Course">
+        <div class="course-details">
+            <h3>Violin Beginner Course</h3>
+            <p><strong>Instructor:</strong> Alex Brown</p>
+            <p><strong>Duration:</strong> 4 Months</p>
+            <p><strong>Description:</strong> Learn basic violin techniques and finger placements.</p>
+            <p class="price">$300</p>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+    </div>
+
+    <!-- Violin Advanced Course -->
+    <div class="course">
+        <img src="https://example.com/violin.jpg" alt="Violin Advanced Course">
+        <div class="course-details">
+            <h3>Violin Advanced Course</h3>
+            <p><strong>Instructor:</strong> Alex Brown</p>
+            <p><strong>Duration:</strong> 4 Months</p>
+            <p><strong>Description:</strong> Master advanced violin bowing techniques and complex pieces.</p>
+            <p class="price">$400</p>
+            <a href="#" class="enroll-btn">Enroll Now</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Melody Academy. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+        /* Global Styles */
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Page background: royal-blue to black gradient */
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #000000 0%, #071028 35%, #091a3d 65%, #1d11fe 100%);
+            color: #e6f0ff;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(90deg, #1d11fe, #000000);
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.6);
+        }
+        header .logo {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            gap: 18px;
+            align-items: center;
+        }
+        nav ul li {
+            margin: 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 18px;
+            transition: color 0.25s ease;
+        }
+        nav ul li a:hover {
+            color: #8fb9ff;
+        }
+
+        /* Main container (glass card look) */
+        .container {
+            max-width: 900px;
+            margin: 34px auto;
+            padding: 28px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+            border-radius: 14px;
+            box-shadow: 0 12px 40px rgba(2,6,23,0.7);
+            border: 1px solid rgba(120,150,255,0.06);
+            backdrop-filter: blur(6px);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            color: #8fb9ff;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            font-size: 1.05rem;
+            margin: 8px 0;
+            color: #dceafe;
+        }
+
+        /* Social icons */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin: 18px 0 8px;
+        }
+
+        .social-links a {
+            color: #fff;
+            background: linear-gradient(180deg, #1d11fe 0%, #000000 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 52px;
+            height: 52px;
+            font-size: 1.4rem;
+            text-decoration: none;
+            box-shadow: 0 8px 24px rgba(29,17,254,0.18);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-4px) scale(1.06);
+            box-shadow: 0 14px 36px rgba(29,17,254,0.28);
+        }
+
+        /* Query form */
+        .query-form {
+            margin-top: 10px;
+        }
+
+        .query-form h3 {
+            font-size: 1.75rem;
+            color: #bcd8ff;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .query-form label {
+            font-size: 1rem;
+            color: #cfe6ff;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .query-form input,
+        .query-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 14px;
+            border-radius: 10px;
+            border: 1px solid rgba(120,150,255,0.12);
+            background: rgba(255,255,255,0.02);
+            color: #eaf4ff;
+            font-size: 1rem;
+            outline: none;
+            transition: box-shadow 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+        }
+
+        .query-form input::placeholder,
+        .query-form textarea::placeholder {
+            color: rgba(220,235,255,0.55);
+        }
+
+        .query-form input:focus,
+        .query-form textarea:focus {
+            box-shadow: 0 8px 30px rgba(29,17,254,0.12);
+            border-color: rgba(79,163,255,0.5);
+            transform: translateY(-1px);
+        }
+
+        .query-form textarea {
+            resize: vertical;
+            min-height: 140px;
+            max-height: 320px;
+        }
+
+        .query-form button {
+            width: 100%;
+            padding: 14px 20px;
+            background: linear-gradient(90deg, #1d11fe 0%, #000000 100%);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
+            box-shadow: 0 10px 28px rgba(29,17,254,0.16);
+            z-index: 2;
+            position: relative; /* ensures button always above other elements */
+        }
+
+        .query-form button:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 18px 40px rgba(29,17,254,0.24);
+            background: linear-gradient(90deg, #0b65ff 0%, #000000 100%);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 18px;
+            margin-top: 26px;
+            color: #dcecff;
+            background: transparent;
+            font-size: 0.95rem;
+        }
+        footer a {
+            color: #9ed0ff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 880px) {
+            .container { margin: 20px; padding: 20px; }
+            header { padding: 14px 18px; }
+            nav ul { gap: 10px; }
+            .contact-info h2 { font-size: 1.6rem; }
+            .query-form h3 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ByteLogix Hub</div>
+        <nav>
+            <ul>
+               <li><a href="/home">Home</a></li>
+                <li><a href="/course">Courses</a></li>
+            
+                <li><a href="/about">About</a></li>
+            
+                
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+      <div class="contact-info">
+    <h2>Get in Touch</h2>
+    <p><strong>Mobile:</strong> +123 456 7890</p>
+    <p><strong>Email:</strong> info@bytelogixhub.com</p>
+    <p><strong>Address:</strong> 123 Colomoa Lane, Tech City, 56789</p>
+
+    <div class="social-links">
+        <a href="https://www.instagram.com" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" title="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+    </div>
+
+
+        </div>
+
+        <div class="query-form">
+            <h3>Have a Query?</h3>
+            <form id="contactForm">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" placeholder="Type your query here" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        &copy; 2025 ByteLogix Hub. All Rights Reserved. Visit us on 
+        <a href="https://www.instagram.com" target="_blank">Instagram</a> and 
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>.
+    </footer>
+
+    <script>
+       document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting
+
+    // Get form data
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Client-side validation
+    if (name && email && message) {
+        const formData = { name, email, message };
+
+        // Send data to the server using fetch API
+        fetch('/submit-contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert(data.message); // Display server response
+
+            // Clear the form fields
+            document.getElementById('contactForm').reset();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again later.');
+        });
+    } else {
+        alert('All fields are required!');
+    }
+});
+</script>
+</body>
+</html>

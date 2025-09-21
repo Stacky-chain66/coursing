@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Testimonials</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .video-section, .info-section {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex: 1 1 45%;
+            max-width: 600px;
+        }
+        .video-section iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+            border: none;
+        }
+        .info-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 30px;
+            text-align: left;
+        }
+        .info-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #6A5ACD;
+        }
+        .info-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 5px 0;
+        }
+        .info-section span {
+            font-weight: bold;
+            color: #48C9B0;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .video-section, .info-section {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Video Section -->
+        <div class="video-section">
+            <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="Testimonial Video" allowfullscreen></iframe>
+        </div>
+
+        <!-- Info Section -->
+        <div class="info-section">
+            <h3>Jane Doe</h3>
+            <p><span>Course Enrolled:</span> Advanced Guitar Techniques</p>
+            <p>"Learning with ByteLogix Hub has been a transformative experience. The courses are top-notch, and the support is amazing!"</p>
+        </div>
+    </div>
+</body>
+</html>

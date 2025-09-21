@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ByteLogix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & base */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #05061a 45%, #0e1b61 100%);
+            color: #e8eefc;
+            line-height: 1.6;
+            -webkit-font-smoothing:antialiased;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #1d11fe 0%, #000000 100%);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+        }
+        header .logo { font-size: 24px; font-weight: 700; letter-spacing: .4px; }
+        nav ul { list-style: none; display:flex; gap:18px; margin:0; padding:0; align-items:center; }
+        nav ul li { margin: 0; }
+        nav ul li a {
+            text-decoration: none;
+            color: #f4f7ff;
+            font-weight: 500;
+            transition: color .25s;
+            font-size: 16px;
+        }
+        nav ul li a:hover { color: #8fb9ff; }
+
+        /* About container */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 48px;
+            max-width: 1200px;
+            margin: 20px auto;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 1 1 480px;
+            color: #dfe9ff;
+            text-align: justify;
+        }
+        .about-text h2 {
+            font-size: 2.4rem;
+            margin: 0 0 18px 0;
+            color: #8fb9ff;
+        }
+        .about-text p {
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            color: #d3ddff;
+        }
+        .about-text a {
+            color: #a6c8ff;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 8px;
+        }
+        .about-text a:hover { text-decoration: underline; color: #fff; }
+
+        .about-image {
+            flex: 1 1 420px;
+            text-align: center;
+            align-self: center;
+        }
+        .about-image img {
+            width: 100%;
+            max-width: 820px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(13,18,45,0.7);
+            border: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* Team section */
+        .team-section {
+            padding: 52px 20px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+        }
+        .team-section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 28px;
+            color: #a8c9ff;
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            width: 300px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(2,6,23,0.7);
+            text-align: left;
+            color: #e7eefc;
+            transition: transform .35s ease, box-shadow .35s ease;
+            border: 1px solid rgba(111,141,255,0.06);
+        }
+        .team-member:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 18px 40px rgba(13,18,45,0.85);
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .team-member .member-body {
+            padding: 18px;
+        }
+        .team-member h3 {
+            margin: 6px 0;
+            font-size: 1.25rem;
+            color: #9ec3ff;
+        }
+        .team-member p.title {
+            margin: 4px 0 8px 0;
+            font-weight: 700;
+            color: #cfe3ff;
+        }
+        .team-member p.desc {
+            margin: 0;
+            color: #d7e3ff;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(90deg, #000000, #1d11fe);
+            color: #e5eeff;
+            padding: 18px;
+            text-align: center;
+            margin-top: 36px;
+            font-size: 0.95rem;
+        }
+        footer a { color: #d6e6ff; text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive tweaks */
+        @media (max-width: 920px) {
+            .about-container { padding: 28px; gap: 24px; }
+            .about-image { order: -1; margin-bottom: 8px; }
+            .course, .team-member { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">ByteLogix</div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/course">Courses</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="about-container">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>At Bytelogix, we provide high-quality online technical courses designed to empower and educate learners of all backgrounds. Whether you're looking to learn coding, explore web development, dive into cybersecurity, or understand data science, our expert instructors are here to guide you every step of the way.</p>
+            <p>Our mission is to make tech education accessible, engaging, and career-focused, offering a wide range of courses that suit all levels — from beginners to aspiring professionals. We believe in the power of technology to transform futures and unlock new opportunities.</p>
+            <p>With our user-friendly platform, you can learn at your own pace, anytime, from anywhere. Start your tech journey with Bytelogix today and build the skills that shape tomorrow.</p>
+            <a href="#">Learn More</a>
+        </div>
+
+        <div class="about-image">
+            <img src="/images/helloworldimg.jpg" alt="Music Learning Image">
+        </div>
+    </section>
+
+    <section class="team-section">
+        <h2>Meet Our Instructors</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="/images/netchuck.jpeg" alt="Instructor 1">
+                <div class="member-body">
+                    <h3>Chuck Keith</h3>
+                    <p class="title"><b>Dark-web specialist</b></p>
+                    <p class="desc">Chuck is a cybersecurity educator and content creator with a passion for making complex tech topics fun and accessible. With years of experience in networking and ethical hacking, he empowers learners through engaging, hands-on tutorials.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="/images/netchuck2.jpg" alt="Instructor 2">
+                <div class="member-body">
+                    <h3>Mr. Harry</h3>
+                    <p class="title"><b>Full-stack specialist</b></p>
+                    <p class="desc">Harry is a passionate programmer and educator known for simplifying complex coding concepts. He specializes in web development, Python, and modern tech tools.</p>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <img src="/images/netchuck3.jpeg" alt="Instructor 3">
+                <div class="member-body">
+                    <h3>Bucky Roberts</h3>
+                    <p class="title"><b>Coding Visionary Expert</b></p>
+                    <p class="desc">Bucky Roberts is known for his fun and beginner-friendly programming tutorials. His clear teaching style has made coding approachable for millions of learners.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <footer>
+        <p>&copy; 2025 ByteLogix Hub. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

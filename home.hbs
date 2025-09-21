@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteLogix Hub - Learn coding Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header Section */
+        header {
+            background: linear-gradient(90deg, #000000, #062ddb);
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+     #bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+  }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-weight: 500;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f4f4f4;
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+     .hero {
+    background: url('') no-repeat center center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    animation: backgroundMove 10s linear infinite alternate;
+}
+
+@keyframes backgroundMove {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+        .hero-content {
+            z-index: 1;
+            animation: fadeIn 2s ease-in-out;
+             position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 0;
+}
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-in-out;
+            
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            animation: slideIn 2s ease-in-out;
+        }
+
+       .hero a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #48C9B0;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+            animation: fadeIn 3s ease-in-out;
+}
+
+        .hero a:hover {
+            background: #f01313;
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            background: white;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2f0fff;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .about h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 3px;
+            background: #1b0bf5;
+        }
+
+        .about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+        }
+
+        .about a {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #2707f3;
+            color: white;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .about a:hover {
+            background: #fa1414;
+            transform: scale(1.05);
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 80px 20px;
+            text-align: center;
+            background: #f4f4f4;
+        }
+
+        .courses h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2c10df;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .courses h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            height: 3px;
+            background: #1600df;
+        }
+
+        .course-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            background: white;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgb(19, 47, 205), 0 8px 15px rgba(0, 0, 0, 0);
+        }
+
+        .course-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .course-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #6A5ACD;
+        }
+
+        .course-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(90deg, #000000, #2e10f1);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .testimonial {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #48C9B0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .course {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            align-items: start;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            padding-top: 60px;
+        }
+
+        .course img {
+            width: 200%;
+            height: 340px;
+            object-fit: cover;
+            padding-left: 50px;
+            border-radius: 20px;
+        }
+
+        .course-details {
+            padding-left: 340px;
+            padding-right: 20px;
+        }
+
+        .course-details h3 {
+            font-size: 1.8rem;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+               margin-top:0px;
+        }
+
+        .course-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .course-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #48C9B0;
+            margin-top: 10px;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            margin-top: 15px;
+             margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color: #6A5ACD;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .enroll-btn:hover {
+            background-color: #48C9B0;
+            transform: scale(1.1);
+        }
+   .coursediv {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 40px;
+        flex-wrap: wrap;
+    }
+
+    .courses{
+        background: white;
+        padding-top: 10px;
+    
+       
+    }
+
+    .course:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 15px rgb(40, 11, 230), 0 8px 15px rgba(0, 0, 0, 0);
+    }
+
+    .course img {
+        width: 100%;
+        height: 180px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    .course h2{
+        padding-top: 0px;
+    }
+
+    .course h3 {
+        font-size: 1.5rem;
+        color: #6A5ACD;
+        padding-top: 0px;
+    }
+
+    .course p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+    .course .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #48C9B0;
+        margin-top: 10px;
+    }
+
+    .enroll-btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #6A5ACD;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .enroll-btn:hover {
+        background-color: #48C9B0;
+        transform: scale(1.1);
+    }
+
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: red;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    clip-path: polygon(50% 0%, 61% ,35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: block;
+}
+     .team-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .team-member {
+    background-color: white;
+    width: 400px; /* Increased width */
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal button {
+            padding: 15px 35px;
+            background: #6A5ACD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .modal button:hover {
+            background: #48C9B0;
+        }
+        .feedback {
+    padding: 80px 20px;
+    text-align: center;
+    background: #f4f4f4;
+}
+
+.feedback h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #6A5ACD;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.feedback h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 3px;
+    background: #48C9B0;
+}
+
+.feedback form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.feedback .form-group {
+    margin-bottom: 20px;
+}
+
+.feedback label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.feedback input, .feedback textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.feedback button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #6A5ACD;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.feedback button:hover {
+    background: #48C9B0;
+    transform: scale(1.05);
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <video autoplay muted loop id="bgVideo">
+  <source src="/images/bgvd1.mp4" type="video/mp4" />
+</video>
+
+    <header>
+        <div class="logo">ByteLogix</div>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/course">Courses</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Master the tech that shapes Tomorrow.</h1>
+            <p><center style="font-size: x-large;">Learn codes from the best tutors.</center></p>
+            <a href="/course">Get Started Now</a>
+        </div>
+    </section>
+        <!-- About Section -->
+    <section class="about">
+        <h2>About ByteLogix Hub</h2>
+        <p>At ByteLogix Hub, we believe that everyone has the potential to code with unique skills. Our mission is to provide high-quality knowledge to students of all ages and skill levels.</p>
+        <a href="/about">Learn More</a>
+    </section>
+    <section class="courses">
+    <h2>Our Courses</h2>
+     <div class="team-container">
+        <div class="team-member">
+            <div class="discount">20% Off</div>
+            <img src="/images/basic.webp" alt="Guitar Course">
+            <h3>Basics from scratch</h3>
+            <p><strong>Instructor:</strong> Jane Doe</p>
+            <p><strong>Duration:</strong> 3 Months</p>
+            <p class="price">₹3500</p>
+           <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+        </div>
+        
+       <div class="team-member">
+            <div class="discount">30% Off</div>
+          <img src="/images/be2.jpg" alt="Jazz Theory">
+            <h3>Backend Theory</h3>
+            <p><strong>Instructor:</strong> Michael Smith</p>
+            <p><strong>Duration:</strong> 4 Months</p>
+            <p class="price">₹4000</p>
+              <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+        </div>
+       <div class="team-member">
+            <div class="discount">22% Off</div>
+            <img src="/images/fulls.jpeg" alt="Piano Fundamentals">
+            <h3>Full-stack Fundamentals</h3>
+            <p><strong>Instructor:</strong> Emily Taylor</p>
+            <p><strong>Duration:</strong> 5 Months</p>
+            <p class="price">₹5000</p>
+              <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+        </div>
+    </div>
+</section>
+
+
+   
+   
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>What Our Students Say...</h2>
+        <p class="testimonial">"ByteLogix Hub transformed my understanding of coding. The instructors are phenomenal!" - Jack D.</p>
+        <p class="testimonial">"I finally learned to build big projects, thanks to their structured courses!" - Alex T.</p>
+    </section>
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h3>Login Required</h3>
+            <p>You need to log in to enroll in this course.</p>
+            <button onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <!-- Feedback Section -->
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ByteLogix Hub. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+      <script>
+        function handleEnroll() {
+            const isLoggedIn = false; // Simulating login status
+
+            if (!isLoggedIn) {
+                document.getElementById("modalOverlay").style.display = "flex";
+            } else {
+                alert("You're successfully enrolled!");
+             
+
+            }
+        }
+
+        function redirectToLogin() {
+            document.getElementById("modalOverlay").style.display = "none";
+            window.location.href = "/login";
+        }
+    </script>
+</body>
+</html>

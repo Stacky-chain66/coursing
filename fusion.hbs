@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrument Learning Courses</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+    body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(90deg, #6A5ACD, #48C9B0);
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .course {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            align-items: start;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            padding-top: 60px;
+        }
+
+        .course img {
+            width: 200%;
+            height: 340px;
+            object-fit: cover;
+            padding-left: 50px;
+            border-radius: 20px;
+        }
+
+        .course-details {
+            padding-left: 340px;
+            padding-right: 20px;
+        }
+
+        .course-details h3 {
+            font-size: 1.8rem;
+            color: #6A5ACD;
+            margin-bottom: 10px;
+               margin-top:0px;
+        }
+
+        .course-details p {
+            margin: 5px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .course-details .price {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #48C9B0;
+            margin-top: 10px;
+        }
+
+        .enroll-btn {
+            display: inline-block;
+            margin-top: 15px;
+             margin-bottom: 10px;
+            padding: 10px 20px;
+            background-color: #6A5ACD;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .enroll-btn:hover {
+            background-color: #48C9B0;
+            transform: scale(1.1);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            padding: 40px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal button {
+            padding: 15px 35px;
+            background: #6A5ACD;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .modal button:hover {
+            background: #48C9B0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Melody Academy</div>
+        <nav>
+            <ul>
+                  <li><a href="/home">Home</a></li>
+                <li><a href="/course">Courses</a></li>
+                <li><a href="/testi">Testimonials</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Western Classical Music Courses -->
+ 
+
+    <div class="course">
+        <img src="/images/c3.jpg" alt="Orchestration Basics">
+        <div class="course-details">
+            <h3>Orchestration Basics</h3>
+            <p><strong>Instructor:</strong> John Williams</p>
+            <p><strong>Duration:</strong> 5 Months</p>
+            <p><strong>Mode:</strong>Offline</p>
+            <p><strong>Description:</strong> Understand orchestral arrangements and scoring techniques.</p>
+            <p class="price">₹4800</p>
+          <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+
+    <div class="course">
+        <img src="/images/c4.jpg" alt="Classical Guitar Skills">
+        <div class="course-details">
+            <h3>Classical Guitar Skills</h3>
+            <p><strong>Instructor:</strong> Marco Rossi</p>
+            <p><strong>Duration:</strong> 3 Months</p>
+            <p><strong>Mode:</strong>Online</p>
+            <p><strong>Description:</strong> Play beautiful classical guitar compositions with ease.</p>
+            <p class="price">₹3000</p>
+          <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+
+    <div class="course">
+        <img src="/images/c5.avif" alt="Opera Singing">
+        <div class="course-details">
+            <h3>Opera Singing</h3>
+            <p><strong>Instructor:</strong> Maria Novak</p>
+            <p><strong>Duration:</strong> 6 Months</p>
+            <p><strong>Mode:</strong>Online</p>
+            <p><strong>Description:</strong> Train your voice for classical and operatic singing.</p>
+            <p class="price">₹6000</p>
+            <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+
+    <div class="course">
+        <img src="/images/c6.jpg" alt="String Quartet Basics">
+        <div class="course-details">
+            <h3>String Quartet Basics</h3>
+            <p><strong>Instructor:</strong> Daniel Green</p>
+            <p><strong>Duration:</strong> 4 Months</p>
+            <p><strong>Mode:</strong>Offline</p>
+            <p><strong>Description:</strong> Explore the art of chamber music with a string quartet.</p>
+            <p class="price">₹4000</p>
+           <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+
+    <div class="course">
+        <img src="/images/c7.jpg" alt="Baroque Music Styles">
+        <div class="course-details">
+            <h3>Baroque Music Styles</h3>
+            <p><strong>Instructor:</strong> Philip Brown</p>
+            <p><strong>Duration:</strong> 5 Months</p>
+            <p><strong>Mode:</strong>Offline</p>
+            <p><strong>Description:</strong> Study Baroque composers and performance techniques.</p>
+            <p class="price">₹5000</p>
+<a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+       <div class="course">
+        <img src="/images/c1.jpg" alt="Piano Mastery">
+        <div class="course-details">
+            <h3>Piano Mastery</h3>
+            <p><strong>Instructor:</strong> Anna Schmidt</p>
+            <p><strong>Duration:</strong> 6 Months</p>
+            <p><strong>Mode:</strong>Online</p>
+            <p><strong>Description:</strong> Master classical piano techniques and repertoire.</p>
+            <p class="price">₹5000</p>
+         <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+
+    <div class="course">
+        <img src="/images/c2.webp" alt="Violin Techniques">
+        <div class="course-details">
+            <h3>Violin Techniques</h3>
+            <p><strong>Instructor:</strong> Emily Carter</p>
+            <p><strong>Duration:</strong> 4 Months</p>
+            <p><strong>Mode:</strong>Online</p>
+            <p><strong>Description:</strong> Learn vibrato, bowing, and advanced violin techniques.</p>
+            <p class="price">₹4500</p>
+         <a href="#" class="enroll-btn" onclick="handleEnroll()">Enroll Now</a>
+
+        </div>
+    </div>
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h3>Login Required</h3>
+            <p>You need to log in to enroll in this course.</p>
+            <button onclick="redirectToLogin()">OK</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Melody Academy. All Rights Reserved.</p>
+    </footer>
+     <script>
+        function handleEnroll() {
+            const isLoggedIn = false; // Simulating login status
+
+            if (!isLoggedIn) {
+                document.getElementById("modalOverlay").style.display = "flex";
+            } else {
+                alert("You're successfully enrolled!");
+            }
+        }
+
+        function redirectToLogin() {
+            document.getElementById("modalOverlay").style.display = "none";
+            window.location.href = "/login";
+        }
+    </script>
+</body>
+</html>
